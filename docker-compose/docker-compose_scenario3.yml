@@ -1,0 +1,54 @@
+version: "3.9"
+services:
+  producer1:
+    image: unidev/producer:0.0.1-SNAPSHOT
+    ports:
+      - "5100:5001"
+
+  producer2:
+    image: unidev/producer:0.0.1-SNAPSHOT
+    ports:
+      - "5101:5001"
+
+  producer3:
+    image: unidev/producer:0.0.1-SNAPSHOT
+    ports:
+      - "5102:5001"
+
+  producer4:
+    image: unidev/producer:0.0.1-SNAPSHOT
+    ports:
+      - "5103:5001"
+
+  worker1:
+    image: unidev/worker:0.0.1-SNAPSHOT
+    environment:
+      - worker.taskProcessingTimeMillis=8000
+
+  worker2:
+    image: unidev/worker:0.0.1-SNAPSHOT
+    environment:
+      - worker.taskProcessingTimeMillis=8000
+
+  worker3:
+    image: unidev/worker:0.0.1-SNAPSHOT
+    environment:
+      - worker.taskProcessingTimeMillis=8000
+
+  worker4:
+    image: unidev/worker:0.0.1-SNAPSHOT
+    environment:
+      - worker.taskProcessingTimeMillis=8000
+
+  audit:
+    container_name: audit
+    image: unidev/audit:0.0.1-SNAPSHOT
+    ports:
+      - "5003:5003"
+
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management
+    ports:
+      - "15672:15672"
+      - "5672:5672"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Starting up environment for Scenario 1"
-docker-compose -f docker-compose.yml up -d
+docker-compose -f docker-compose_scenario1.yml up -d
 sleep 30s
 echo "Stopping production of tasks"
 curl --silent --output nul --location --request POST 'http://localhost:5001/scheduler/stop'
@@ -15,4 +15,4 @@ sleep 30s
 echo "Stats after 30s of processing"
 curl --location --request GET 'http://localhost:5003/audit/stats'
 echo "Shutting down the environment"
-docker-compose -f docker-compose.yml down
+docker-compose -f docker-compose_scenario1.yml down

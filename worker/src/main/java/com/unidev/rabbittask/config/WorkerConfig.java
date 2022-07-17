@@ -9,6 +9,7 @@ public class WorkerConfig {
 
     private int taskProcessingTimeMillis = 1000;
     private int discardCheckIntervalMillis = 100;
+    private boolean shouldThrowErrorOnEveryThirdTask = false;
 
     public int getTaskProcessingTimeMillis() {
         return taskProcessingTimeMillis;
@@ -24,5 +25,13 @@ public class WorkerConfig {
 
     public void setDiscardCheckIntervalMillis(int discardCheckIntervalMillis) {
         this.discardCheckIntervalMillis = discardCheckIntervalMillis;
+    }
+
+    public boolean isShouldThrowErrorOnEveryThirdTask() {
+        return shouldThrowErrorOnEveryThirdTask;
+    }
+
+    public void setShouldThrowErrorOnEveryThirdTask(boolean shouldThrowErrorOnEveryThirdTask) {
+        this.shouldThrowErrorOnEveryThirdTask = shouldThrowErrorOnEveryThirdTask;
     }
 }
