@@ -1,0 +1,7 @@
+server:
+  port: 5001
+
+#Sample configuration modification:
+#producer:
+#  task:
+#    interval: 0/5 * * * * *

@@ -1,0 +1,33 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.1'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id "com.palantir.docker" version "0.34.0"
+}
+
+group = 'com.unidev'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation 'org.springframework.boot:spring-boot-starter-amqp'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+docker {
+    name 'unidev/audit:'.plus(version)
+    uri 'unidev/audit:'.plus(version)
+    copySpec.from("build").into("build")
+    pull(true)
+    setDockerfile(file("Dockerfile"))
+}

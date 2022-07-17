@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  producer:
+    container_name: producer
+    image: unidev/producer:0.0.1-SNAPSHOT
+    ports:
+      - "5001:5001"
+      - "5004:5004" # jdwp debug port
+
+  worker:
+    container_name: worker
+    image: unidev/worker:0.0.1-SNAPSHOT
+    ports:
+      - "5002:5002" # jdwp debug port
+
+  audit:
+    container_name: audit
+    image: unidev/audit:0.0.1-SNAPSHOT
+    ports:
+      - "5003:5003"
+
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management
+    ports:
+      - "15672:15672"
+      - "5672:5672"

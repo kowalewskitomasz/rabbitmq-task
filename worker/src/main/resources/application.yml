@@ -1,0 +1,4 @@
+#Sample configuration modification:
+#worker:
+#  taskProcessingTimeMillis: 5000
+#  discardCheckIntervalMillis: 50
