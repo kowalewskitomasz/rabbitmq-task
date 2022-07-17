@@ -1,7 +1,7 @@
 server:
   port: 5001
 
-#Sample configuration modification:
+#Sample configuration modification (can be also done via docker-compose):
 #producer:
 #  task:
 #    interval: 0/5 * * * * *

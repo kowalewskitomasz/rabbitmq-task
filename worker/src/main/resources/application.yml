@@ -1,4 +1,4 @@
-#Sample configuration modification:
+#Sample configuration modification (can be also done via docker-compose):
 #worker:
 #  taskProcessingTimeMillis: 5000
 #  discardCheckIntervalMillis: 50

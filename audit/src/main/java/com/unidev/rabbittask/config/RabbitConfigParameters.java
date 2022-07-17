@@ -19,5 +19,8 @@ public class RabbitConfigParameters {
     public static final String DISCARDED_TASKS_ROUTING_KEY = "default-discarded-tasks";
     public static final String CERTIFIED_RESULT_EXCHANGE = "certified-result";
     public static final String CERTIFIED_RESULT_ROUTING_KEY = "default-certified-result";
+    public static final String DEAD_LETTER_QUEUE_EXCHANGE = "dead-letter-queue";
+    public static final String DEAD_LETTER_QUEUE_QUEUE = "dead-letter-queue.q";
+    public static final String DEAD_LETTER_QUEUE_ROUTING_KEY = "default-dead-letter-queue";
 
 }
